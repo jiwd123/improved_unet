@@ -78,7 +78,7 @@ if __name__ == "__main__":
     name_classes    = ["background","root"]
     #path = 'E:/github/deeplabv3-plus-pytorch-main/VOCdevkit/VOC2007/out/'
     outpath = 'imgout1/'
-    inputpath = 'ceshi/'
+    inputpath = 'F:/mseg/dataset/2_S/'
 
     #img = input('Input image filename:')
     # x = os.listdir(inputpath)

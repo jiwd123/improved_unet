@@ -17,7 +17,7 @@ import torch.nn.functional as F
 
 # 构造参数解析器并解析参数
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--images",default="img1/", type=str, #required=True,
+ap.add_argument("-i", "--images",default="img/", type=str, #required=True,
                 help="path to input directory of images to stitch")
 ap.add_argument("-o", "--output", default="imgout/",type=str, #required=True,
                 help="path to the output image")

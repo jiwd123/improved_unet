@@ -9,7 +9,7 @@ import torch.nn.functional as F
 from PIL import Image
 from torch import nn
 
-from nets.unetgai import Unet as unet
+from nets.unetgaire import Unet as unet
 from utils.utils import cvtColor, preprocess_input, resize_image, show_config
 
 
@@ -26,7 +26,7 @@ class Unet(object):
         #   训练好后logs文件夹下存在多个权值文件，选择验证集损失较低的即可。
         #   验证集损失较低不代表miou较高，仅代表该权值在验证集上泛化性能较好。
         #-------------------------------------------------------------------#
-        "model_path"    : '3vgg.pth',
+        "model_path"    : '3resnet.pth',
         #"model_path"    : 'loggaire/best_epoch_weights.pth',
         #"model_path"    : 'logcbam/ep055-loss0.017-val_loss0.024.pth',
         #"model_path"    : 'logpixels/ep050-loss0.019-val_loss0.026.pth',
@@ -38,7 +38,7 @@ class Unet(object):
         #--------------------------------#
         #   所使用的的主干网络：vgg、resnet50   
         #--------------------------------#
-        "backbone"      : "vgg",
+        "backbone"      : "resnet50",
         #--------------------------------#
         #   输入图片的大小
         #--------------------------------#
@@ -69,7 +69,7 @@ class Unet(object):
         #   画框设置不同的颜色
         #---------------------------------------------------#
         if self.num_classes <= 21:
-            self.colors = [ (255, 255, 255), (0, 0, 0), (0, 0, 0), (128, 128, 0), (0, 0, 128), (128, 0, 128), (0, 128, 128), 
+            self.colors = [ (0, 0, 0), (255, 0, 0), (0, 255, 0), (128, 128, 0), (0, 0, 128), (128, 0, 128), (0, 128, 128), 
                             (128, 128, 128), (64, 0, 0), (192, 0, 0), (64, 128, 0), (192, 128, 0), (64, 0, 128), (192, 0, 128), 
                             (64, 128, 128), (192, 128, 128), (0, 64, 0), (128, 64, 0), (0, 192, 0), (128, 192, 0), (0, 64, 128), 
                             (128, 64, 12)]
