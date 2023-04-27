@@ -1,10 +1,12 @@
 import torch
 import torch.nn as nn
 
-from nets.resnet import resnet50
-from nets.vgg import VGG16
-from nets.cbam import CBAMLayer
-
+# from nets.resnet import resnet50
+# from nets.vgg import VGG16
+# from nets.cbam import CBAMLayer
+from resnet import resnet50
+from vgg import VGG16
+from cbam import CBAMLayer
 
 class unetUp(nn.Module):
     def __init__(self, in_size, out_size):
@@ -105,3 +107,7 @@ class Unet(nn.Module):
         elif self.backbone == "resnet50":
             for param in self.resnet.parameters():
                 param.requires_grad = True
+
+if __name__ =="__main__":
+    net = Unet(num_classes = 2, pretrained = False, backbone = 'vgg')
+    print(net)
