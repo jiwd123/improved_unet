@@ -1,3 +1,3 @@
 # improved_unet
-log download：链接：https://pan.baidu.com/s/1b9FyudxjhS3Uq1HGrXtj1A?pwd=s99c 
-提取码：s99c
+log download：链接：https://pan.baidu.com/s/1aF3_gPnu6ELvrr2rIosVWQ?pwd=68gt 
+提取码：68gt 
